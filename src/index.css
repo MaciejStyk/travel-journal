@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Typography */
+
+h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 0.4em 0em;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+p {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6em;
+  margin-bottom: 1.5em;
+}
+
+/* Header */
+
+.header {
+  background: #f55a5a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__icon {
+  font-size: 2rem;
+  padding: 0.7em 0.3em;
+}
+
+.header__icon a {
+  color: inherit;
+}
+
+/* Main */
+
+.entries {
+  padding: 0 1em 1em;
+}
+
+.entry {
+  margin: 2em 0em;
+}
+
+.entry:not(:last-child) {
+  border-bottom: 2px solid #f5f5f5;
+}
+
+.entry__location {
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.entry__location i {
+  color: #f55a5a;
+  margin-right: 0.5em;
+}
+
+.entry__location span {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-right: 0.5em;
+}
+
+.entry__location a {
+  text-decoration-line: underline;
+  color: #918e9b;
+}
+
+.entry__location a:visited {
+  color: #918e9b;
+}
+
+.entry__title {
+  overflow: hidden;
+}
+
+.entry__image {
+  border-radius: 0.5rem;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (min-width: 500px) {
+  .entry {
+    display: grid;
+    justify-content: left;
+    align-items: center;
+    column-gap: 1em;
+    grid-template-rows: 2em max-content 2em max-content 1.5em;
+    grid-template-areas:
+      "image location"
+      "image title"
+      "image date"
+      "image description"
+      ". .";
+  }
+
+  .entry__location {
+    grid-area: location;
+    padding-top: 1.5em;
+  }
+
+  .entry__title {
+    grid-area: title;
+  }
+
+  .entry__date {
+    grid-area: date;
+  }
+
+  .entry__image {
+    grid-area: image;
+    height: 100%;
+    max-height: 270px;
+    width: 200px;
+  }
+
+  .entry__description {
+    grid-area: description;
+  }
+}
+
+@media (min-width: 650px) {
+  .entries {
+    padding: 0 1em 1em;
+  }
+
+  .entry {
+    column-gap: 2em;
+  }
+
+  .entry__location {
+    padding-top: 1.5em;
+  }
+}
+
+@media (min-width: 900px) {
+  .entries {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
